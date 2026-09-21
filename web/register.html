@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Student Registration</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-page">
+<div class="auth-card wide">
+<a href="/" class="brand">Placement<span>Hub</span></a>
+<h2>Create Student Account</h2>
+<p class="muted">Build your placement profile.</p>
+<form id="registerForm" class="grid-form">
+<label>Student ID<input id="sid" required placeholder="STU111"></label>
+<label>Full Name<input id="name" required></label>
+<label>Email<input id="email" type="email" required></label>
+<label>Password<input id="password" type="password" required></label>
+<label>Branch<input id="branch" required placeholder="CSE"></label>
+<label>CGPA<input id="cgpa" type="number" step="0.01" min="0" max="10" required></label>
+<label class="span2">Skills (comma separated)<input id="skills" placeholder="Java, SQL, React"></label>
+<label>Training<input id="training" placeholder="Java Full Stack"></label>
+<label>Internships<input id="internships" placeholder="Software Development"></label>
+<label>Certifications<input id="certifications" placeholder="Java Certification"></label>
+<label>Projects<input id="projects" placeholder="Placement Portal"></label>
+</form>
+<button class="btn btn-primary full" onclick="register()">Register</button>
+<p id="message" class="message"></p>
+<p class="center">Already registered? <a href="/login.html">Login</a></p>
+</div>
+<script>
+async function register(){
+ const body={id:sid.value,name:name.value,email:email.value,password:password.value,branch:branch.value,cgpa:cgpa.value,
+ skills:skills.value,training:training.value,internships:internships.value,certifications:certifications.value,projects:projects.value};
+ const r=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+ const d=await r.json(); message.textContent=d.message;
+ if(d.success) setTimeout(()=>location.href='/login.html',700);
+}
+</script>
+</body>
+</html>

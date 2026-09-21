@@ -1,0 +1,2 @@
+NOT002|admin|APPLICATION|New application from Thrinadh Naidu for Vinay - manager|2026-09-18|false
+NOT003|2520030529|APPLICATION|Your Vinay application is now SHORTLISTED|2026-09-18|false

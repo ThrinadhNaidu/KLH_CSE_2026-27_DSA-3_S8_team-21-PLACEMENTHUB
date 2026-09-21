@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Student Dashboard</title><link rel="stylesheet" href="/css/style.css"></head>
+<body>
+<nav class="navbar"><div class="brand">Placement<span>Hub</span></div><div><span id="welcome"></span><button class="logout" onclick="logout()">Logout</button></div></nav>
+<main class="dashboard">
+<div class="page-head"><div><p class="eyebrow">STUDENT DASHBOARD</p><h1 id="studentName">Student</h1></div></div>
+<section class="stats" id="stats"></section>
+<div class="two-col">
+<section class="panel"><h2>My Profile</h2><form id="profileForm" class="grid-form"></form><button class="btn btn-primary" onclick="updateProfile()">Save Changes</button><p id="profileMsg" class="message"></p></section>
+<section class="panel"><h2>Company Opportunities</h2><input id="companySearch" placeholder="Search company, role or skill..." oninput="loadCompanies()"><div id="companies"></div></section>
+</div>
+<section class="panel"><h2>My Applications</h2><div id="applicationList"></div></section>
+<section class="panel"><h2>Notifications</h2><div id="notificationList"></div></section>
+<section class="panel"><h2>Skill Search (Trie + Fuzzy Matching)</h2><div class="search-row"><input id="skillSearch" placeholder="Try: Jav" oninput="autocompleteSkills()"><button class="btn btn-outline" onclick="fuzzySearch()">Fuzzy Search</button></div><div id="suggestions"></div><div id="searchResults"></div></section>
+</main>
+<script src="/js/student.js"></script>
+</body>
+</html>

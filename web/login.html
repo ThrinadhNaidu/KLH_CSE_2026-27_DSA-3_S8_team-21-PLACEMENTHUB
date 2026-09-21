@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Login - Placement Hub</title><link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-page">
+<div class="auth-card">
+  <a href="/" class="brand">Placement<span>Hub</span></a>
+  <h2>Welcome back</h2>
+  <p class="muted">Login as a student or administrator.</p>
+  <div class="role-tabs">
+    <button class="active" onclick="setRole('student',this)">Student</button>
+    <button onclick="setRole('admin',this)">Admin</button>
+  </div>
+  <form id="loginForm">
+    <input type="hidden" id="role" value="student">
+    <label>Email</label><input id="email" type="email" required>
+    <label>Password</label><input id="password" type="password" required>
+    <button class="btn btn-primary full" type="submit">Login</button>
+  </form>
+  <p id="message" class="message"></p>
+  <p id="registerPrompt" class="center">New student? <a href="/register.html">Create account</a></p>
+</div>
+<script>
+function setRole(role,btn){
+ document.getElementById('role').value=role;
+ document.querySelectorAll('.role-tabs button').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ const registerPrompt=document.getElementById('registerPrompt');
+ if(registerPrompt) registerPrompt.style.display = role === 'student' ? 'block' : 'none';
+}
+setRole('student', document.querySelector('.role-tabs button.active'));
+document.getElementById('loginForm').onsubmit=async e=>{
+ e.preventDefault();
+ const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},
+ body:JSON.stringify({role:role.value,email:email.value,password:password.value})});
+ const d=await r.json(); message.textContent=d.message||'';
+ if(d.success){ localStorage.setItem('session',JSON.stringify(d.user)); location.href=d.user.role==='admin'?'/admin.html':'/student.html'; }
+};
+</script>
+</body>
+</html>

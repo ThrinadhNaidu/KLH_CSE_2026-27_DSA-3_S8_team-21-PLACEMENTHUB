@@ -1,0 +1,4 @@
+STU101|Rahul Kumar|rahul@gmail.com|1234|CSE|8.7|Java,SQL,React,HTML|Java Full Stack|Web Development|Java Certification,SQL Certification|E-Commerce Website|Not Placed
+STU102|Priya Sharma|priya@gmail.com|1234|CSE|9.1|Python,SQL,Machine Learning,Pandas|Data Science|Data Science|Python Certification,ML Certification|Student Performance Prediction|Not Placed
+STU103|Arjun Reddy|arjun@gmail.com|1234|IT|7.8|C++,DSA,Java,Problem Solving|Advanced DSA|Software Development|DSA Certification|Placement Management System|Not Placed
+2520030529|Thrinadh Naidu|thrinadhbandaru18@gmail.com|thrinadh2007|CSE|9.14|java,html,css,database|java full stcak|software development|java,html,css,database.|placement portal,areohub|Not Placed

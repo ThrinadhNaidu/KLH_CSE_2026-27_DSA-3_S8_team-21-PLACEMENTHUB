@@ -1,0 +1,4 @@
+COMP001|TCS|Software Developer|Build and maintain enterprise software applications.|8.0|Java,SQL,DSA|Java Full Stack|Software Development|Hyderabad|6 LPA|30-09-2026|0
+COMP002|Infosys|Web Developer|Develop responsive web applications.|7.5|HTML,CSS,JavaScript,React|Web Development|Web Development|Hyderabad|5.5 LPA|05-10-2026|0
+COMP003|Wipro|Data Analyst|Work with data analysis and reporting.|8.0|Python,SQL,Pandas|Data Science|Data Science|Bengaluru|6.2 LPA|10-10-2026|0
+COMP004|Vinay|manager||9.0|java,database|None|None||7 LPA|30-09-2026|0
